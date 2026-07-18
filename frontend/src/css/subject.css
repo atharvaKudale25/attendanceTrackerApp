@@ -1,0 +1,343 @@
+.subjectContainer {
+    width: 98%;
+    max-width: 1200px;
+    margin: 12px auto;
+    padding: 15px 15px;
+
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+
+}
+
+.subject {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.subjectInfo {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.subjectNameDiv {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #1f2937;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.message {
+    font-size: 1rem;
+    color: #6b7280;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.editDiv,
+.deleteDiv {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.editDiv {
+    background: #ecfdf5;
+}
+
+.editDiv:hover {
+    background: #d1fae5;
+}
+
+.deleteDiv {
+    background: #fef2f2;
+}
+
+.deleteDiv:hover {
+    background: #fee2e2;
+}
+
+.editIcon {
+    color: #10b981;
+    font-size: 1.5rem;
+}
+
+.deleteIcon {
+    color: #ef4444;
+    font-size: 1.5rem;
+}
+
+.attendedDiv,
+.absentDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.attendedText,
+.absentText {
+    font-size: .95rem;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.attendedInfoDiv,
+.absentInfoDiv {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.addIconDiv,
+.subIconDiv {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.subIconDiv {
+    background: #fee2e2;
+}
+
+.subIcon {
+    color: #dc2626;
+    font-size: 1.35rem;
+}
+
+.subIconDiv:hover {
+    background: #fecaca;
+}
+
+.addIconDiv {
+    background: #dcfce7;
+}
+
+.addIcon {
+    color: #16a34a;
+    font-size: 1.35rem;
+}
+
+.addIconDiv:hover {
+    background: #bbf7d0;
+}
+
+.attendedNo,
+.absentNo {
+    width: 34px;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.infoOfAttendanceDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.percentage {
+    width: 130px;
+    padding: 10px 0;
+
+    border-radius: 14px;
+
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    color: white;
+}
+
+.percentage.good {
+    background: #16a34a;
+}
+
+.percentage.warning {
+    background: #f59e0b;
+}
+
+.percentage.danger {
+    background: #ef4444;
+}
+
+.criteria {
+    width: 130px;
+    padding: 8px 0;
+
+    border-radius: 12px;
+
+    background: #ecfdf5;
+    border: 1px solid #bbf7d0;
+
+    color: #16a34a;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+
+@media (max-width: 770px) {
+
+    .subjectContainer {
+        width: 96%;
+        padding: 10px;
+    }
+
+    .subject {
+        gap: 15px;
+    }
+
+    .subjectNameDiv {
+        font-size: 1.5rem;
+    }
+
+    .message {
+        font-size: .8rem;
+    }
+
+    .percentage,
+    .criteria {
+        width: 100px;
+    }
+
+    .percentage {
+        font-size: 1.25rem;
+    }
+
+    .attendedNo,
+    .absentNo {
+        font-size: 1.2rem;
+    }
+
+    .attendedInfoDiv,
+    .absentInfoDiv {
+        gap: 5px;
+    }
+}
+
+
+
+
+
+@media (max-width: 700px) {
+    .subjectContainer {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .subject {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 24px 12px; 
+    }
+
+    
+    .subjectInfo {
+        flex: 0 0 auto; 
+        width: calc(100% - 108px); 
+        gap: 6px;
+    }
+
+    .editDiv {
+        order: 2;
+        flex: 0 0 auto;
+        width: 42px;
+        height: 42px;
+    }
+
+    .deleteDiv {
+        order: 3;
+        flex: 0 0 auto;
+        width: 42px;
+        height: 42px;
+    }
+
+    .subjectNameDiv {
+        font-size: 1.5rem;
+    }
+
+    .message {
+        font-size: 0.9rem;
+    }
+
+
+    
+    .attendedDiv {
+        order: 4;
+        flex: 0 0 auto;
+        width: calc(50% - 6px); 
+        align-items: center; 
+    }
+
+    .absentDiv {
+        order: 5;
+        flex: 0 0 auto;
+        width: calc(50% - 6px);
+        align-items: center;
+    }
+
+    .attendedInfoDiv,
+    .absentInfoDiv {
+        width: 100%;
+        justify-content: center;
+        gap: 12px; 
+    }
+
+    .attendedNo,
+    .absentNo {
+        font-size: 1.3rem;
+    }
+
+    .addIconDiv,
+    .subIconDiv {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    
+    .infoOfAttendanceDiv {
+        order: 6;
+        flex: 0 0 auto;
+        width: 100%; 
+        flex-direction: row; 
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .percentage,
+    .criteria {
+        flex: 1; 
+        width: auto; 
+        padding: 12px 0; 
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        font-size: 1.15rem;
+    }
+}
