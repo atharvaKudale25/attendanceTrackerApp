@@ -46,7 +46,7 @@ const authMiddleWare = (req, res, next) => {
     }
 }
 
-console.log(process.env.MONGODB_URI);
+
 
 mongoose.connect(mongodbURL)
     .then(() => console.log('Connected to MongoDB!'))  
