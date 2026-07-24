@@ -175,7 +175,7 @@ function Edit() {
 
                     <div className='errorDiv'>{errorMessage}</div>
                     <div className="editButtons">
-                        <button className='cancelButton' disabled={submitting} onClick={() => {
+                        <button type='button' className='cancelButton' disabled={submitting} onClick={() => {
                             navigate("/home");
                         }
                         }>Cancel</button>

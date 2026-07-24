@@ -48,7 +48,7 @@ function Home() {
     };
 
     fetchData();
-  }, []);
+  },[]);
 
   const handleManualChange = async (id, which, what) => {
     setDisable(true);

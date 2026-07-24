@@ -95,6 +95,7 @@ function Add() {
             if (res.status == 401) {
                 localStorage.removeItem("user");
                 navigate('/');
+                return;
             }
             if (!res.ok) {
                 throw new Error(r.message);
@@ -179,7 +180,7 @@ function Add() {
 
                     <div className='errorDiv'>{errorMessage}</div>
                     <div className="addButtons">
-                        <button className='cancelButton' disabled={submitting} onClick={() => {
+                        <button type="button"className='cancelButton' disabled={submitting} onClick={() => {
                             navigate("/home");
                         }
                         }>Cancel</button>
