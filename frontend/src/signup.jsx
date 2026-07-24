@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './css/signup.css'
 import { Navigate, useNavigate } from "react-router-dom";
+import Loader from './components/loader.jsx'
 
 function Signup() {
     const [submitting, setSubmitting] = useState(false);
@@ -55,6 +56,7 @@ function Signup() {
 
     return (
         <>
+            {submitting && <Loader />}
             <div className="signUpBody">
                 <form onSubmit={handleSubmit} className='signUpContainer'>
                     <div className='signUpHeader'>Sign Up</div>

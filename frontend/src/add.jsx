@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './css/add.css'
 import { Navigate, useNavigate } from "react-router-dom";
+import Loader from './components/loader.jsx'
 
 
 function Add() {
@@ -111,6 +112,7 @@ function Add() {
     return (
 
         <>
+            {submitting && <Loader />}
             <div className="addBody">
                 <form onSubmit={handleSubmit} className='addContainer'>
                     <div className='addHeader'>Add a Subject</div>

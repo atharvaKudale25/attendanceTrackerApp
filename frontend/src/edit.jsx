@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './css/edit.css'
 import { Navigate, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Loader from './components/loader.jsx'
 
 
 function Edit() {
@@ -33,7 +34,7 @@ function Edit() {
                         'Authorization': `Bearer ${user.token}`,
                         "Content-Type": "application/json",
                     },
-                    
+
                 })
                 const r = await res.json();
                 if (res.status === 401) {
@@ -42,10 +43,10 @@ function Edit() {
                 }
                 if (!res.ok) {
                     throw new Error(r.message);
-                    
+
                 }
                 setUserData({ subjectName: r.subjectName, attended: r.attended, absent: r.absent, criteria: r.criteria });
-                
+
             } catch (err) {
                 setErrorMessage(err.message);
                 console.log(err.message);
@@ -116,6 +117,7 @@ function Edit() {
     return (
 
         <>
+            {submitting && <Loader />}
             <div className="editBody">
                 <form onSubmit={handleSubmit} className='editContainer'>
                     <div className='editHeader'>Edit a Subject</div>
@@ -156,7 +158,7 @@ function Edit() {
                             max={999}
                             step={1}
                         /> </div>
-                        
+
                     <div className='editCriteriaDiv'>Attendance criteria(in %):
                         <input
                             type="number"
@@ -168,7 +170,7 @@ function Edit() {
                             min={0}
                             max={100}
                             step={1}
-                        />                  
+                        />
                     </div>
 
                     <div className='errorDiv'>{errorMessage}</div>

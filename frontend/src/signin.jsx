@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './css/signin.css'
 import { Navigate, useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
+import Loader from './components/loader.jsx'
 
 function Signin() {
     const [submitting, setSubmitting] = useState(false);
@@ -86,6 +87,7 @@ function Signin() {
     return (
 
         <>
+            {submitting && <Loader />}
             <div className="signInBody">
                 <form onSubmit={handleSubmit} className='signInContainer'>
                     <div className='signInHeader'>Sign In</div>
