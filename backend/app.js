@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';  
+import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import UserLogin from './models/userLoginModel.js';
@@ -17,8 +17,8 @@ const jwtSecretKey = process.env.JWT_SECRET;
 const clientKey = process.env.CLIENT_URL;
 
 app.use(cors({
-    origin: clientKey ,
-    credentials:true
+    origin: clientKey,
+    credentials: true
 }));
 
 app.use(express.json());
@@ -49,9 +49,9 @@ const authMiddleWare = (req, res, next) => {
 
 
 mongoose.connect(mongodbURL)
-    .then(() => console.log('Connected to MongoDB!'))  
+    .then(() => console.log('Connected to MongoDB!'))
     .catch(err => console.error('Connection error:', err));
-     
+
 app.post('/signup', async (req, res) => {
     const userLoginData = req.body;
     try {
@@ -271,6 +271,11 @@ app.put('/edit/:id', authMiddleWare, async (req, res) => {
     }
 
     try {
+        if (!mongoose.Types.ObjectId.isValid(subjectId)) {
+            return res.status(404).json({
+                message: "Subject not found"
+            });
+        }
         const alreadyExists = await subjectData.findOne({
             email: userEmail,
             subjectName: subjectName.trim(),
@@ -282,6 +287,7 @@ app.put('/edit/:id', authMiddleWare, async (req, res) => {
                 message: "Subject already exists"
             });
         }
+
         const reqSubject = await subjectData.findOne({ _id: subjectId, email: userEmail });
         if (!reqSubject) {
             return res.status(404).json({

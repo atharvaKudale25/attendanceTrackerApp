@@ -34,9 +34,12 @@ function Signin() {
             } catch (err) {
 
             }
+            setSubmitting(false);
         }
-        if(user)
-        authorize();
+        if (user) {
+            setSubmitting(true);
+            authorize();
+        }
     }, [])
 
 

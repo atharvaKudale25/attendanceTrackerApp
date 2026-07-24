@@ -25,6 +25,7 @@ function Edit() {
         }
 
         const fetchData = async () => {
+            setSubmitting(true);
             try {
                 const res = await fetch(`${baseUrl}getASubject/${id}`, {
                     method: "GET",
@@ -32,7 +33,7 @@ function Edit() {
                         'Authorization': `Bearer ${user.token}`,
                         "Content-Type": "application/json",
                     },
-
+                    
                 })
                 const r = await res.json();
                 if (res.status === 401) {
@@ -41,14 +42,15 @@ function Edit() {
                 }
                 if (!res.ok) {
                     throw new Error(r.message);
-
+                    
                 }
                 setUserData({ subjectName: r.subjectName, attended: r.attended, absent: r.absent, criteria: r.criteria });
-
+                
             } catch (err) {
                 setErrorMessage(err.message);
                 console.log(err.message);
             }
+            setSubmitting(false);
         }
         fetchData();
 
