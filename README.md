@@ -96,20 +96,7 @@ A full-stack MERN application that helps students track attendance across multip
 <p align="center">
   <img src="./screenshots/mobile-view.jpeg" width="300">
 </p>
-```
-Attendance-Tracker/
-│
-├── frontend/                 # React Frontend
-│   ├── src/
-│   └── package.json
-│
-├── backend/                 # Express Backend
-│   ├── models/
-│   ├── app.js
-│   └── package.json
-│
-└── README.md
-```
+
 
 ---
 
