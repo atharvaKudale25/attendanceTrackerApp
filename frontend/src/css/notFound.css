@@ -1,0 +1,70 @@
+.notFoundContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #f8fafc;
+    font-family: Arial, sans-serif;
+}
+
+.notFoundContainer h1 {
+    font-size: 100px;
+    font-weight: 800;
+    color: #2563eb;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.notFoundContainer h2 {
+    font-size: 28px;
+    color: #1e293b;
+    margin: 20px 0 10px;
+}
+
+.notFoundContainer p {
+    font-size: 16px;
+    color: #64748b;
+    margin: 0 0 28px;
+    line-height: 1.6;
+}
+
+.notFoundContainer a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.notFoundContainer a:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.notFoundContainer a:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+    .notFoundContainer h1 {
+        font-size: 72px;
+    }
+
+    .notFoundContainer h2 {
+        font-size: 23px;
+    }
+
+    .notFoundContainer p {
+        font-size: 14px;
+    }
+}
