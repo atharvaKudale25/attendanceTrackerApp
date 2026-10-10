@@ -10,7 +10,7 @@ function NotFound() {
                 Sorry, the page you are looking for
                 doesn't exist or has been moved.
             </p>
-            <Link to="/">Return Home</Link>
+            <Link to="/home">Return Home</Link>
         </div>
     );
 }
