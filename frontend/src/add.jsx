@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import './css/add.css'
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 import Loader from './components/loader.jsx'
+import { formatDateInYYYY_MM_DD } from './utils/helpersFunction.jsx';
 
 
 function Add() {
@@ -88,10 +90,10 @@ function Add() {
                     'Authorization': `Bearer ${user.token}`,
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(userData),
+                body: JSON.stringify({ ...userData, date: formatDateInYYYY_MM_DD(new Date()) }),
             })
             const r = await res.json();
-            console.log(res.status);
+
             if (res.status == 401) {
                 localStorage.removeItem("user");
                 navigate('/');
@@ -101,10 +103,11 @@ function Add() {
                 throw new Error(r.message);
 
             }
+            toast.success("Added!");
             navigate("/home");
         }
         catch (err) {
-            console.log(err.message);
+            toast.error("Something went wrong!");
             setErrorMessage(err.message);
         }
         setSubmitting(false);
@@ -180,7 +183,7 @@ function Add() {
 
                     <div className='errorDiv'>{errorMessage}</div>
                     <div className="addButtons">
-                        <button type="button"className='cancelButton' disabled={submitting} onClick={() => {
+                        <button type="button" className='cancelButton' disabled={submitting} onClick={() => {
                             navigate("/home");
                         }
                         }>Cancel</button>

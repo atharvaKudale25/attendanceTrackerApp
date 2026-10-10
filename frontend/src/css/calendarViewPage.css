@@ -1,0 +1,215 @@
+.CalendarViewPageContainer {
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #f5f5f5;
+}
+
+.calendarDateInput {
+    width: 420px;
+    max-width: 90%;
+    box-sizing: border-box;
+
+    margin-top: 35px;
+    padding: 12px 15px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    background-color: white;
+    color: #1f2937;
+
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 500;
+
+    outline: none;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.calendarDateInput:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.calendarDateInput::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.CalendarViewPageContainer .react-calendar {
+    width: 420px;
+    max-width: 90%;
+    margin-top: 50px;
+
+    padding: 20px;
+
+    border: none;
+    border-radius: 15px;
+
+    background-color: white;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+
+    font-family: inherit;
+}
+
+.CalendarViewPageContainer .react-calendar__navigation {
+    margin-bottom: 15px;
+}
+
+.CalendarViewPageContainer .react-calendar__navigation button {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.CalendarViewPageContainer .react-calendar__tile {
+    height: 50px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.CalendarViewPageContainer .react-calendar__tile:hover {
+    background-color: #dbeafe;
+}
+
+.CalendarViewPageContainer .react-calendar__tile--now {
+    background-color: #dbeafe !important;
+    color: #2563eb !important;
+}
+
+.CalendarViewPageContainer .react-calendar__tile--now:hover {
+    background-color: #2563eb !important;
+    color: white !important;
+}
+
+.CalendarViewPageContainer .react-calendar__tile--active {
+    background-color: #2563eb !important;
+    color: white !important;
+}
+
+.CalendarViewPageContainer .react-calendar__tile--active:hover {
+    background-color: #1d4ed8 !important;
+    color: white !important;
+}
+
+.buttonsForCalendarViewInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+
+.cancelButtonForCalendarInput,
+.submitForCalendarInput {
+    min-width: 110px;
+    padding: 11px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.cancelButtonForCalendarInput:active,
+.submitForCalendarInput:active {
+    transform: scale(0.97);
+}
+
+.cancelButtonForCalendarInput {
+    background-color: #ef4444;
+    color: white;
+}
+
+.cancelButtonForCalendarInput:hover {
+    background-color: #dc2626;
+}
+
+.submitForCalendarInput {
+    background: #2563eb;
+    color: white;
+}
+
+.submitForCalendarInput:hover {
+    background: #1d4ed8;
+}
+
+.submitForCalendarInput:disabled {
+    background: #7692e1;
+    color: white;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.returnToHome {
+    width: 420px;
+    max-width: 90%;
+    box-sizing: border-box;
+
+    margin-top: 25px;
+    margin-bottom: 5px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #2563eb;
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: color 0.2s, transform 0.15s;
+}
+
+.returnToHome:hover {
+    color: #1d4ed8;
+}
+
+.returnToHome svg {
+    font-size: 1.2rem;
+}
+
+.returnToHome:active {
+    transform: translateX(-2px);
+}
+
+@media (max-width: 500px) {
+    .CalendarViewPageContainer .react-calendar {
+        width: 90%;
+        padding: 12px;
+        margin-top: 30px;
+    }
+
+    .CalendarViewPageContainer .react-calendar__tile {
+        height: 42px;
+        font-size: 0.85rem;
+    }
+
+    .buttonsForCalendarViewInput {
+        width: 90%;
+    }
+
+    .cancelButtonForCalendarInput,
+    .submitForCalendarInput {
+        flex: 1;
+    }
+}

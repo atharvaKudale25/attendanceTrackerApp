@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './css/signin.css'
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
 import Loader from './components/loader.jsx'
 

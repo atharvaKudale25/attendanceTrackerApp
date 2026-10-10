@@ -8,46 +8,142 @@
 
 }
 
+
+
 .subjectsContainer {
     width: 100%;
 
     display: flex;
     flex-direction: column;
-    
+
     box-sizing: border-box;
 }
 
-.addButton {
+.featureContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.addButton,
+.deleteButton,
+.calendarViewButton {
     padding: 10px 18px;
+    margin: 0;
     border: none;
     border-radius: 8px;
-    background-color: #16a34a;
     color: white;
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
-    margin: 15px;
-    margin-top: 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    box-sizing: border-box;
+}
+
+
+.addButton {
+    background-color: #16a34a;
 }
 
 .addButton:hover {
-    background: #03c647;
+    background-color: #03c647;
 }
+
 
 .deleteButton {
-    padding: 10px 18px;
-    border: none;
-    border-radius: 8px;
-    background: #ef4444;
-    color: white;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
+    background-color: #ef4444;
+}
+
+.deleteButton:hover {
+    background-color: #dc2626;
 }
 
 
-.deleteButton:hover{
-    background: #dc2626;
+.calendarViewButton {
+    background-color: #2563eb;
+}
+
+.calendarViewButton:hover {
+    background-color: #1d4ed8;
+}
+
+.searchBarContainer {
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 15px;
+    margin: 0 auto 25px;
+
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchBarField {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 0;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    color: #1f2937;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+
+.searchBarContainer svg {
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    color: #6b7280;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.searchBarContainer:focus-within {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.searchBarContainer:focus-within svg {
+    color: #2563eb;
+}
+
+.searchBarContainer:hover {
+    border-color: #9ca3af;
+}
+
+@media (max-width: 480px) {
+    .searchBarContainer {
+        width: 92%;
+        padding: 0 12px;
+    }
+
+    .searchBarField {
+        font-size: 0.95rem;
+    }
+}
+
+.noAddedSubjectMessage {
+    margin: 25px 50px;
+    font-size: 1rem;
+    color: #666666;
 }

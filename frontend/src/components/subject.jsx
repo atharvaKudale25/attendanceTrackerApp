@@ -1,16 +1,14 @@
-import { useState } from 'react'
 import { IoMdAdd } from "react-icons/io";
 import { RiSubtractLine } from "react-icons/ri";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import '../css/subject.css'
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { formatDateInYYYY_MM_DD } from '../utils/helpersFunction.jsx';
 
 function Subject({ subjectId, subjectName, attended, absent, handleManualChange, handleDelete, criteria, disable }) {
 
     const navigate = useNavigate();
-    const baseUrl = import.meta.env.VITE_baseUrl;
-    const user = JSON.parse(localStorage.getItem('user'));
 
     //message part--------------------------------
     const total = attended + absent;
@@ -106,7 +104,7 @@ function Subject({ subjectId, subjectName, attended, absent, handleManualChange,
                         <div className="attendedInfoDiv">
                             <div
                                 className="subIconDiv"
-                                onClick={() => { if (!disable) handleManualChange(subjectId, "attended", "decrease") }}
+                                onClick={() => { if (!disable) handleManualChange(subjectId, "attended", "decrease",formatDateInYYYY_MM_DD(new Date())) }}
                             >
                                 <RiSubtractLine className="subIcon" />
                             </div>
@@ -115,7 +113,7 @@ function Subject({ subjectId, subjectName, attended, absent, handleManualChange,
 
                             <div
                                 className="addIconDiv"
-                                onClick={() => { if (!disable) handleManualChange(subjectId, "attended", "increase") }}
+                                onClick={() => { if (!disable) handleManualChange(subjectId, "attended", "increase",formatDateInYYYY_MM_DD(new Date())) }}
                             >
                                 <IoMdAdd className="addIcon" />
                             </div>
@@ -128,7 +126,7 @@ function Subject({ subjectId, subjectName, attended, absent, handleManualChange,
                         <div className="absentInfoDiv">
                             <div
                                 className="subIconDiv"
-                                onClick={() => { if (!disable) handleManualChange(subjectId, "absent", "decrease") }}
+                                onClick={() => { if (!disable) handleManualChange(subjectId, "absent", "decrease",formatDateInYYYY_MM_DD(new Date())) }}
                             >
                                 <RiSubtractLine className="subIcon" />
                             </div>
@@ -137,7 +135,7 @@ function Subject({ subjectId, subjectName, attended, absent, handleManualChange,
 
                             <div
                                 className="addIconDiv"
-                                onClick={() => { if (!disable) handleManualChange(subjectId, "absent", "increase") }}
+                                onClick={() => { if (!disable) handleManualChange(subjectId, "absent", "increase",formatDateInYYYY_MM_DD(new Date())) }}
                             >
                                 <IoMdAdd className="addIcon" />
                             </div>

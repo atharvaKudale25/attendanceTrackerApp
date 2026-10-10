@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import './css/edit.css'
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import Loader from './components/loader.jsx'
+import { toast } from 'react-toastify';
+import Loader from './components/loader.jsx';
+import { formatDateInYYYY_MM_DD } from './utils/helpersFunction.jsx';
 
 
 function Edit() {
@@ -45,6 +47,7 @@ function Edit() {
                     throw new Error(r.message);
 
                 }
+
                 setUserData({ subjectName: r.subjectName, attended: r.attended, absent: r.absent, criteria: r.criteria });
 
             } catch (err) {
@@ -94,7 +97,7 @@ function Edit() {
                     'Authorization': `Bearer ${user.token}`,
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(userData),
+                body: JSON.stringify({ ...userData, date: formatDateInYYYY_MM_DD(new Date()) }),
             })
             const r = await res.json();
             if (res.status === 401) {
@@ -105,9 +108,11 @@ function Edit() {
                 throw new Error(r.message);
 
             }
+            toast.success("Edited!");
             navigate("/home");
         }
         catch (err) {
+            toast.error("Something went wrong!");
             setErrorMessage(err.message);
             console.log(err.message);
         }

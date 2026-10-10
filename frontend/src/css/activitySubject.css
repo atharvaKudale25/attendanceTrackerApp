@@ -1,0 +1,152 @@
+.activitySubjectCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    min-width: 0;
+    padding: 28px 32px;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+}
+
+.activitySubjectHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.activitySubjectName {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.activitySubjectMessage {
+    font-size: 16px;
+    color: #64748b;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.activitySubjectCounts {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 28px;
+    flex: 0 0 auto;
+    min-width: 0;
+}
+
+.activitySubjectCountBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 72px;
+}
+
+.activitySubjectCountLabel {
+    font-size: 16px;
+    font-weight: 600;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.activitySubjectCountValue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+    min-height: 44px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.activitySubjectCountBox:nth-child(1) .activitySubjectPositive {
+    color: #0e9f50;
+    background-color: #e8fff1;
+}
+
+.activitySubjectCountBox:nth-child(1) .activitySubjectNegative {
+    color: #f04444;
+    background-color: #ffe5e5;
+}
+
+.activitySubjectCountBox:nth-child(2) .activitySubjectPositive {
+    color: #f04444;
+    background-color: #ffe5e5;
+}
+
+.activitySubjectCountBox:nth-child(2) .activitySubjectNegative {
+    color: #0e9f50;
+    background-color: #e8fff1;
+}
+
+.activitySubjectZero {
+    color: #64748b;
+    background-color: #f1f5f9;
+}
+
+@media (max-width: 768px) {
+    .activitySubjectCard {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 22px;
+        padding: 22px;
+    }
+
+    .activitySubjectHeader {
+        flex: none;
+        width: 100%;
+    }
+
+    .activitySubjectCounts {
+        justify-content: flex-start;
+        gap: 28px;
+        width: 100%;
+    }
+
+    .activitySubjectCountBox {
+        min-width: 72px;
+    }
+}
+
+@media (max-width: 400px) {
+    .activitySubjectCard {
+        padding: 18px;
+    }
+
+    .activitySubjectName {
+        font-size: 20px;
+    }
+
+    .activitySubjectMessage {
+        font-size: 14px;
+    }
+
+    .activitySubjectCounts {
+        gap: 20px;
+    }
+
+    .activitySubjectCountLabel {
+        font-size: 14px;
+    }
+
+    .activitySubjectCountValue {
+        min-width: 60px;
+        min-height: 40px;
+        padding: 7px 10px;
+        font-size: 16px;
+    }
+}

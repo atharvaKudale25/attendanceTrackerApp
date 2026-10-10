@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react'
 import { CgProfile } from "react-icons/cg";
 import "../css/navBar.css";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 function NavBar() {
@@ -12,7 +11,6 @@ function NavBar() {
         navigate("/");
         return null;
     }
-
 
     return (
         <>
